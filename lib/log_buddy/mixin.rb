@@ -1,7 +1,7 @@
 module LogBuddy
   # The main Mixin that gets added on the #init call
   module Mixin
-    # This is where the magic happens.  This method can take a plain old string, and it will log 
+    # This is where the magic happens.  This method can take a plain old string, and it will log
     # it like any call to Logger#debug.  To get the name of the thing you are logging and its value,
     # use the block form:
     #    d { @a }
@@ -22,6 +22,10 @@ module LogBuddy
       rescue => e
         LogBuddy.debug "LogBuddy caught an exception: #{e.message}"
       end
+    end
+
+    def logger
+      LogBuddy.logger
     end
   end
 end
